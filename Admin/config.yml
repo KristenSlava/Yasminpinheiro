@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: SEU_USUARIO/SEU_REPOSITORIO
+  branch: main
+
+media_folder: "imagens"
+public_folder: "/imagens"
+
+collections:
+  - name: "novidades"
+    label: "Novidades"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Categoria", name: "tag", widget: "string", default: "Artigo" }
+      - { label: "Data", name: "date", widget: "date", format: "MMMM YYYY", dateFormat: "MMMM YYYY", timeFormat: false }
+      - { label: "Resumo", name: "summary", widget: "text" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
